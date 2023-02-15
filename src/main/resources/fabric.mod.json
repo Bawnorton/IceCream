@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "icecream",
+	"version": "${version}",
+	"name": "icecream",
+	"description": "A mod that replaces the client identifying packet with one that identifies as either fabric, forge, vanilla or lunar",
+	"authors": [
+		"Bawnorton"
+	],
+	"contact": {
+		"homepage": "https://bawnorton.com",
+		"sources": "https://github.com/Benjamin-Norton/IceCream"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/icecream/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.bawnorton.IceCream"
+		],
+		"client": [
+			"com.bawnorton.IceCreamClient"
+		]
+	},
+	"mixins": [
+		"icecream.mixins.json",
+		{
+			"config": "icecream.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.13",
+		"minecraft": "~1.19.3",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
