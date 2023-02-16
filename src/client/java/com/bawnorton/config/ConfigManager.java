@@ -17,7 +17,8 @@ public class ConfigManager {
     public static void loadConfig() {
         Config config = load();
 
-        if(config.flavour == null) config.flavour = Config.Flavour.VANILLA;
+        if (config.flavour == null) config.flavour = Config.Flavour.VANILLA;
+
 
         Config.update(config);
         save();
@@ -53,7 +54,7 @@ public class ConfigManager {
     }
 
     public static void saveConfig() {
-        Config.getInstance().flavour = Config.Flavour.of(IceCreamClient.FLAVOUR);
+        Config.getInstance().setFlavour(IceCreamClient.FLAVOUR);
         save();
         IceCreamClient.LOGGER.info("Saved config");
     }

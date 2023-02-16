@@ -8,9 +8,9 @@ import net.minecraft.text.Text;
 public class FlavourPicker extends ButtonWidget {
 
     public FlavourPicker(int x, int y, int width, int height) {
-        super(x, y, width, height, Text.of(capitalize(IceCreamClient.FLAVOUR.getName())), button -> {
+        super(x, y, width, height, Text.of(capitalize(IceCreamClient.FLAVOUR.name())), button -> {
             IceCreamClient.FLAVOUR = IceCreamClient.FLAVOUR.next();
-            button.setMessage(Text.of(capitalize(IceCreamClient.FLAVOUR.getName())));
+            button.setMessage(Text.of(capitalize(IceCreamClient.FLAVOUR.name())));
         }, ButtonWidget.DEFAULT_NARRATION_SUPPLIER);
 
         setTooltip(Tooltip.of(Text.of("Click to change your ice cream flavour (Client)")));

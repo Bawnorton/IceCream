@@ -1,7 +1,9 @@
 package com.bawnorton;
 
+import net.fabricmc.api.EnvType;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,6 +12,8 @@ public class IceCream implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.error("This is a client-side mod and has no server-side functionality.");
+		if (FabricLoader.getInstance().getEnvironmentType() == EnvType.SERVER) {
+			LOGGER.error("IceCream is a client-side mod and should not be installed on a server!");
+		}
 	}
 }

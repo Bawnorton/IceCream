@@ -1,16 +1,10 @@
 package com.bawnorton.config;
 
-import com.bawnorton.flavour.Flavour;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import io.netty.buffer.Unpooled;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.network.packet.c2s.play.CustomPayloadC2SPacket;
-import net.minecraft.util.Identifier;
 
 public class Config {
     private static Config INSTANCE;
-
     @Expose
     @SerializedName("flavour")
     public Config.Flavour flavour = Config.Flavour.VANILLA;
@@ -27,36 +21,33 @@ public class Config {
         INSTANCE = config;
     }
 
+    public Flavour getFlavour() {
+        return flavour;
+    }
+
+    public void setFlavour(Flavour flavour) {
+        this.flavour = flavour;
+    }
+
     public enum Flavour {
         @Expose @SerializedName("vanilla")
-        VANILLA(CustomPayloadC2SPacket.BRAND, "vanilla"),
+        VANILLA("vanilla"),
         @Expose @SerializedName("fabric")
-        FABRIC(CustomPayloadC2SPacket.BRAND, "fabric"),
+        FABRIC("fabric"),
         @Expose @SerializedName("forge")
-        FORGE(CustomPayloadC2SPacket.BRAND, "forge"),
+        FORGE("forge"),
         @Expose @SerializedName("lunar")
-        LUNAR(CustomPayloadC2SPacket.BRAND, "lunarclient:1.19.3");
+        LUNAR("lunarclient:1.19.3"),
+        @Expose @SerializedName("none")
+        NONE(null);
 
-        private final PacketByteBuf data;
-        private final Identifier brand;
+        private final String brand;
 
-        Flavour(Identifier brand, String data) {
+        Flavour(String brand) {
             this.brand = brand;
-            this.data = new PacketByteBuf(Unpooled.buffer()).writeString(data);
         }
 
-        public static Flavour of(com.bawnorton.flavour.Flavour flavour) {
-            for (Flavour value : Flavour.values()) {
-                if (value.name().equalsIgnoreCase(flavour.getName())) return value;
-            }
-            return VANILLA;
-        }
-
-        public PacketByteBuf data() {
-            return data;
-        }
-
-        public Identifier brand() {
+        public String brand() {
             return brand;
         }
 

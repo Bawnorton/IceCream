@@ -1,6 +1,5 @@
 package com.bawnorton.mixin.client;
 
-import com.bawnorton.IceCreamClient;
 import com.bawnorton.gui.widget.FlavourPicker;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen;
