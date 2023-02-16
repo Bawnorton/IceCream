@@ -3,7 +3,8 @@ IceCream
 A mod that replaces the client identifying packet (flavour) with one that identifies as either fabric, forge, vanilla or lunar client.
 
 ## Demo:
-![Demo](images/IceCream.webm)
+![IceCream.webm](https://user-images.githubusercontent.com/18416784/219499767-a986f360-7422-42d0-8f24-e4b7c5e64922.webm)
+
 
 ## Features:
 - Button in the top right of the multiplayer selection screen to cycle through the different flavours
