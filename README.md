@@ -2,6 +2,8 @@ IceCream
 ================
 A mod that replaces the client identifying packet (flavour) with one that identifies as either fabric, forge, vanilla or lunar client.
 
+[![Modrinth](https://img.shields.io/modrinth/dt/icecream?color=00AF5C&label=downloads&logo=modrinth)](https://modrinth.com/mod/icecream)
+
 ## Demo:
 https://user-images.githubusercontent.com/18416784/219499767-a986f360-7422-42d0-8f24-e4b7c5e64922.webm
 
